@@ -18,17 +18,15 @@
     <button onclick="onPageLoad()">click me</button>
 
     <!-- Include a CDN-hosted JavaScript file -->
-    <script type="text/javascript" src="browserjs.js"></script>
-    <script type="text/javascript" src="browser-identity.js"></script>
+    <script type="text/javascript" src="browserjs.min.js"></script>
     
     <script>
         function onPageLoad() {
             //browserjs.getAttributes({}).then(response => console.log(response));
         }
 
-        browserjs.getAttributes({}).then(attributes => {
-            console.log(attributes);
-            console.log(browser_identity.getVisitorId(attributes));
+        browserjs.getVisitorId().then(visitorId => {
+            console.log(visitorId);
         });
 
     </script>
