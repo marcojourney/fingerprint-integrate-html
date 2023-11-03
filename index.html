@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML with CDN</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sample HTML with CDN</title>
 
-    <!-- Optional: Include additional CDN-hosted CSS files -->
-    <!--
-    <link rel="stylesheet" href="https://cdn.example.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.example.com/css/custom-styles.css">
-    -->
+    </head>
+    <body>
+        <h1>Welcome to My Web Page</h1>
+        <p>This is a sample HTML document that uses CDN-hosted files.</p>
 
-</head>
-<body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a sample HTML document that uses CDN-hosted files.</p>
-    <button onclick="onPageLoad()">click me</button>
+        <!-- Include a CDN-hosted JavaScript file -->
+        <!-- <script type="text/javascript" src="helloworld.min.js"></script> -->
+        <script type="text/javascript" src="browserjs.js"></script>
+        
+        <script>
+            browserjs.getAttributes().then(response => alert(response.platform.value));
+            /*console.log("What's inside helloworldjs is here:", helloworldjs);
 
-    <!-- Include a CDN-hosted JavaScript file -->
-    <script type="text/javascript" src="browserjs.min.js"></script>
-    <script type="text/javascript" src="helloworld.min.js"></script>
-    
-    <script>
-        function onPageLoad() {
-            //browserjs.getAttributes({}).then(response => console.log(response));
-        }
+            helloworldjs.sayHelloWorld();
+            helloworldjs.sayHi();
+            helloworldjs.sayHowAu();*/
 
-        console.log("DDDDDD:", helloworldjs);
-        /*browserjs.getVisitorId().then(visitorId => {
-            console.log(visitorId);
-        });*/
-
-    </script>
-    <!-- Optional: Include additional CDN-hosted JavaScript files -->
-    <!--
-    <script src="https://cdn.example.com/js/popper.min.js"></script>
-    <script src="https://cdn.example.com/js/bootstrap.min.js"></script>
-    <script src="https://cdn.example.com/js/custom-scripts.js"></script>
-    -->
-</body>
+        </script>
+    </body>
 </html>
