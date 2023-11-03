@@ -4,12 +4,70 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sample HTML with CDN</title>
+        <style>
+            body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  animation: beat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transition: 0.5s ease-out;
+}
+
+.heart:after {
+  left: 50px;
+  transform: rotate(45deg);
+}
+
+/* Make it look more like a heart */
+.heart:before {
+  left: 15px;
+  border-radius: 50px 50px 0 0;
+}
+
+.heart:after {
+  left: 35px;
+  border-radius: 50px 50px 0 0;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+        </style>
     </head>
     <body>
-        <h1>Welcome to My Web Page</h1>
+        <h1>Welcome to My Web Page: <span style="color: pink;">CRUSH</span></h1>
         <p>This is a sample HTML document that uses CDN-hosted files.</p>
-
+        <div class="heart"></div>
         <!-- Include a CDN-hosted JavaScript file -->
         <!-- <script type="text/javascript" src="helloworld.min.js"></script> -->
         <script type="text/javascript" src="browserjs.js"></script>
